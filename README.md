@@ -1,1 +1,1 @@
-# east-side-book-club
+# east-austin-book-club
