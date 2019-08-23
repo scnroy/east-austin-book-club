@@ -43,6 +43,7 @@ const Layout = ({ children }) => {
             },
             body: {
               margin: 0,
+              background: 'linear-gradient(212deg, rgba(140,69,119,1) 0%, rgba(135,110,172,1) 33%, rgba(119,150,209,1) 66%, rgba(112,188,231,1) 100%)'
             },
           })}
         />

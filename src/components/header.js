@@ -1,28 +1,33 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import {css} from '@emotion/core';
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <header>
     <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+      css={`
+        text-align: center;
+      `}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 css={`
+        margin: 0;
+        font-size: 11.4vw;
+        margin-top: -4vw;
+        opacity: 0.2;
+      `}>
         <Link
           to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
+          sx={{
+            variant: 'title',
+            color: 'text'
           }}
+          css={`
+            text-decoration: none;
+            text-align: center;
+          `}
         >
           {siteTitle}
         </Link>
