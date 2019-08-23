@@ -7,10 +7,19 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Layout as StyledLayout, Container, Main, css } from "theme-ui"
+import {
+  ThemeProvider,
+  Layout as StyledLayout,
+  Container,
+  Main,
+  Footer,
+  css,
+} from "theme-ui"
+import { toTheme } from "@theme-ui/typography"
 import { Global } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 
+import typography from "../utils/typography"
 import Header from "./header"
 
 const Layout = ({ children }) => {
@@ -25,29 +34,31 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <StyledLayout>
-      <Global
-        styles={css({
-          "*": {
-            boxSizing: `border-box`,
-          },
-          body: {
-            margin: 0,
-            fontFamily: `body`,
-          },
-        })}
-      />
-
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Main>
-        <Container>{children}</Container>
-      </Main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </StyledLayout>
+    <>
+      <ThemeProvider theme={toTheme(typography)}>
+        <Global
+          styles={css({
+            "*": {
+              boxSizing: `border-box`,
+            },
+            body: {
+              margin: 0,
+            },
+          })}
+        />
+        <StyledLayout>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <Main>
+            <Container>{children}</Container>
+          </Main>
+          <Footer>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </Footer>
+        </StyledLayout>
+      </ThemeProvider>
+    </>
   )
 }
 
