@@ -27,10 +27,10 @@ collections:
     folder: content/books
     create: true
     preview: false
+    slug: "{{title}}-{{date}}"
     editor:
       preview: false
     fields:
-      - { name: slug, label: "{{title}}-{{date}}" }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: author, label: Author }
