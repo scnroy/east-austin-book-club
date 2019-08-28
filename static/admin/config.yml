@@ -31,10 +31,10 @@ collections:
     editor:
       preview: false
     fields:
-      - { name: date, label: Date, widget: date }
+      - { name: date, label: Date, widget: date , description: The day the book club meets }
       - { name: title, label: Title }
       - { name: author, label: Author }
-      - { name: link, label: Link }
+      - { name: link, label: Link, required: false }
       - { name: cover, label: Book cover, widget: image }
       - { name: description, label: Description, widget: markdown }
-      - { name: questions, label: Questions, widget: markdown }
+      - { name: questions, label: Questions, widget: markdown, required: false }
