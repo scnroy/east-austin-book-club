@@ -1,5 +1,5 @@
 ---
-date: 2019-08-29T01:44:12.765Z
+date: 2019-04-23T01:44:12.765Z
 title: The Collected Schizophrenias
 author: Esmé Weijun Wang
 link: 'https://austin.bibliocommons.com/item/show/1995550067'
