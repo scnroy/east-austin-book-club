@@ -1,6 +1,6 @@
 ---
 date: 2019-01-22T01:05:37.193Z
-title: Future home of the Living God
+title: Future Home of the Living God
 author: Louise Erdrich
 link: 'https://austin.bibliocommons.com/item/show/1884189067'
 cover: /assets/34217599._uy600_ss600_.jpg
