@@ -15,7 +15,7 @@ collections:
     files:
       - label: Content
         name: content
-        file: content/content.yml
+        file: content/content.md
         fields:
           - { name: heading, label: Site Heading }
           - { name: tagline, label: Site tagline }
@@ -27,7 +27,7 @@ collections:
     folder: content/books
     create: true
     preview: false
-    slug: "{{title}}-{{date}}"
+    slug: "{{title}}"
     editor:
       preview: false
     fields:
