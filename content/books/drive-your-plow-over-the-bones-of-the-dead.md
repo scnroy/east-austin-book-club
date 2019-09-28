@@ -3,7 +3,7 @@ date: 2019-11-18T23:00:27.120Z
 title: Drive your Plow Over the Bones of the Dead
 author: Olga Tokarczuk
 link: 'https://austin.bibliocommons.com/item/show/2081620067'
-cover: /assets/42983724._uy630_sr1200-630_.jpg
+cover: /assets/817rgF-gB7L.jpg
 description: >-
   A deeply satisfying thriller cum fairy tale, Drive Your Plow Over the Bones of
   the Dead is a provocative exploration of the murky borderland between sanity

@@ -3,10 +3,10 @@ import {base} from '@theme-ui/presets'
 export default {
     ...base,
     colors: {
-        text: '#E8F3F1',
-        background: '#545479',
-        primary: '#00AD9E',
-        muted: '#B8DDD8',
+        text: '#B5FFF5',
+        background: '#334B48',
+        primary: '#BFD5FF',
+        muted: '#96B1AD',
     },
     heading: {
         fontFamily: 'body',
