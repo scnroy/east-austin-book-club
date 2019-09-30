@@ -3,7 +3,7 @@ date: 2019-09-16T23:09:57.153Z
 title: 'Trust Exercise '
 author: 'Susan Choi '
 link: 'https://austin.bibliocommons.com/item/show/2064618067'
-cover: /assets/9781250318824.jpg
+cover: /assets/71pd1brp2rl.jpg
 description: >-
   In 1982 in a southern city, David and Sarah, two freshmen at a highly
   competitive performing arts high school, thrive alongside their school peers
