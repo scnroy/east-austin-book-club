@@ -3,7 +3,7 @@ date: 2019-03-19T00:07:54.179Z
 title: Who is Vera Kelly
 author: Rosalie Knecht
 link: 'https://austin.bibliocommons.com/item/show/1955412067'
-cover: /assets/36276437.jpg
+cover: /assets/713iz9a449l.jpg
 description: >-
   New York City, 1962. Vera Kelly is struggling to make rent and blend into the
   underground gay scene in Greenwich Village. She's working night shifts at a
