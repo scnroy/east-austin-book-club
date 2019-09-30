@@ -3,7 +3,7 @@ date: 2018-10-15T23:58:19.057Z
 title: 'She Would be King '
 author: Wayétu Moore
 link: 'https://austin.bibliocommons.com/item/show/1983180067'
-cover: /assets/guest_ee5008a2-7692-4d6a-a0dd-2b6ed0c55ee1.jpeg
+cover: /assets/she-would-be.jpg
 description: >-
   Gbessa, exiled from the West African village of Lai, is starved, bitten by a
   viper, and left for dead, but still she survives. June Dey, raised on a
