@@ -3,7 +3,7 @@ date: 2019-01-22T01:05:37.193Z
 title: Future Home of the Living God
 author: Louise Erdrich
 link: 'https://austin.bibliocommons.com/item/show/1884189067'
-cover: /assets/34217599._uy600_ss600_.jpg
+cover: /assets/future-home.jpg
 description: >-
   The world as we know it is ending. Evolution has reversed itself, affecting
   every living creature on earth. Science cannot stop the world from running
