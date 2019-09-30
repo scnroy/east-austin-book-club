@@ -3,7 +3,7 @@ date: 2019-10-21T23:12:19.994Z
 title: 'The Yellow House '
 author: 'Sarah Broom '
 link: 'https://austin.bibliocommons.com/item/show/2080753067'
-cover: /assets/05bookbroom1-facebookjumbo.jpg
+cover: /assets/yellow-house.jpg
 description: >-
   Sarah M. Broom's memoir,  The Yellow House tells a hundred years of her family
   and their relationship to home in a neglected area of one of America's most
