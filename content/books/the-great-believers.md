@@ -3,7 +3,7 @@ date: 2019-06-18T01:48:56.406Z
 title: The Great Believers
 author: 'Rebecca Makkai '
 link: 'https://austin.bibliocommons.com/item/show/1955709067'
-cover: /assets/9780735223530_p0_v1_s550x406.jpg
+cover: /assets/81kq-qjveol.jpg
 description: >-
   In 1985, Yale Tishman, the development director for an art gallery in Chicago,
   is about to pull off an amazing coup, bringing in an extraordinary collection
