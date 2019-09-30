@@ -3,7 +3,7 @@ date: 2019-07-23T01:50:33.577Z
 title: 'Underbug '
 author: Lisa Margonelli
 link: 'https://austin.bibliocommons.com/item/show/1970705067'
-cover: /assets/41hrlxv44rl.jpg
+cover: /assets/underbug.jpg
 description: >-
   Are we more like termites than we ever imagined? In Underbug, the
   award-winning journalist Lisa Margonelli introduces us to the enigmatic
