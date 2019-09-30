@@ -3,8 +3,7 @@ date: 2018-06-18T23:19:48.413Z
 title: Here Comes the Sun
 author: Nicole-Dennis-Benn
 link: 'https://austin.bibliocommons.com/item/show/1594720067'
-cover: >-
-  /assets/9781631491764_custom-8b7b3f05965b08dfda2380d4648dc004845548b6-s300-c85.jpg
+cover: /assets/26530351.jpg
 description: >-
   In this radiant, highly anticipated debut, a cast of unforgettable women
   battle for independence while a maelstrom of change threatens their Jamaican
