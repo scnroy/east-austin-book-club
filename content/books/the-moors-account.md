@@ -3,7 +3,7 @@ date: 2019-05-21T01:46:22.103Z
 title: 'The Moors Account '
 author: ' Laila Lalami '
 link: 'https://austin.bibliocommons.com/item/show/1044083067'
-cover: /assets/9780804170628_p0_v2_s550x406.jpg
+cover: /assets/71bkrd-fa7l.jpg
 description: >-
   In 1527, the conquistador Pánfilo de Narváez sailed from the port of Sanlúcar
   de Barrameda with a crew of six hundred men and nearly a hundred horses. His
