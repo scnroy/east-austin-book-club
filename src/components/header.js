@@ -1,41 +1,49 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
-import {css} from '@emotion/core'
+import {useState} from 'react'
+import {jsx, css} from '@emotion/core'
+
 import {Link} from 'gatsby'
+import {anton} from '../styles/vars'
+import MenuButton from './menu-button'
 import PropTypes from 'prop-types'
 
-const Header = ({siteTitle}) => (
-    <header>
-        <div
-            css={`
-                text-align: center;
+const Header = ({siteTitle}) => {
+    const [isOpen, setIsOpen] = useState(false)
+    return (
+        <header
+            css={css`
+                display: grid;
+                grid-template-columns: 1fr 6fr 1fr;
+                grid-template-areas: '. main .';
+                margin: 1rem 0;
             `}
         >
-            <h1
-                css={`
-                    margin: 0;
-                    font-size: 11.4vw;
-                    margin-top: -4vw;
-                    opacity: 0.2;
+            <div
+                css={css`
+                    grid-area: main;
+                    display: flex;
                 `}
             >
                 <Link
                     to="/"
-                    sx={{
-                        variant: 'title',
-                        color: 'text',
-                    }}
-                    css={`
+                    css={css`
+                        ${anton}
                         text-decoration: none;
-                        text-align: center;
+                        text-align: left;
+                        text-transform: uppercase;
+                        letter-spacing: 0.6em;
+                        line-height: 1.8;
+                        word-spacing: 100vw;
+                        color: white;
                     `}
                 >
                     {siteTitle}
                 </Link>
-            </h1>
-        </div>
-    </header>
-)
+                <MenuButton isActive={isOpen} handleClick={setIsOpen} />
+            </div>
+        </header>
+    )
+}
 
 Header.propTypes = {
     siteTitle: PropTypes.string,

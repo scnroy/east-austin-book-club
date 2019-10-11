@@ -7,12 +7,10 @@ const typography = new Typography({
         },
         {
             name: 'Lora',
-            styles: ['400', '400i'],
+            styles: ['400', '400i', '700', '700i'],
         },
     ],
-    headerFontFamily: ['Anton', 'sans-serif'],
-    bodyFontFamily: ['Lora', 'serif'],
-    headerWeight: 'normal',
+    baseFontSize: '18px',
 })
 const {rhythm, scale} = typography
 export {rhythm, scale, typography as default}
