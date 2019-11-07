@@ -5,7 +5,24 @@
  */
 
 const {createFilePath} = require('gatsby-source-filesystem')
+const moment = require('moment')
 const path = require('path')
+
+exports.onCreatePage = ({page, actions}) => {
+    const {createPage, deletePage} = actions
+    deletePage(page)
+    createPage({
+        ...page,
+        context: {
+            ...page.context,
+            filter: {
+                frontmatter: {
+                    date: {ne: null, gte: moment().format()},
+                },
+            },
+        },
+    })
+}
 
 exports.onCreateNode = ({node, getNode, actions}) => {
     const {createNodeField} = actions

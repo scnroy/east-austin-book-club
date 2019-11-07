@@ -1,57 +1,102 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
+import {jsx, css} from '@emotion/core'
 import {graphql} from 'gatsby'
-import styled from '@emotion/styled'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import {colors} from '../styles/vars'
+import {Button} from '../components/button'
 
-// const Paper = styled.div`
-
-// `
+const Book = ({date, title, author, description, cover, link}) => (
+    <section>
+        <h2
+            css={css`
+                line-height: 1.4;
+                font-size: 3em;
+            `}
+        >
+            {date}
+        </h2>
+        <div
+            css={css`
+                background-color: ${colors.light};
+                padding: 4rem;
+                color: ${colors.dark};
+                border-radius: 2px;
+                display: flex;
+            `}
+        >
+            <div
+                css={css`
+                    flex-basis: 100%;
+                `}
+            >
+                <img
+                    src={cover}
+                    alt=""
+                    css={css`
+                        max-width: 100%;
+                        height: auto;
+                    `}
+                />
+                <Button label="Check out library book" href={link} />
+            </div>
+            <div
+                css={css`
+                    flex-shrink: 2;
+                `}
+            >
+                <h3>{title}</h3>
+                <p>
+                    <em>{author}</em>
+                </p>
+                <p>{description}</p>
+            </div>
+        </div>
+    </section>
+)
 
 const IndexPage = ({
+    pageContext,
     data: {
         allMarkdownRemark: {edges},
     },
-}) => {
-    const {
-        title,
-        author,
-        description,
-        cover,
-        date,
-        link,
-    } = edges[0].node.frontmatter
-    return (
-        <Layout>
-            <SEO title="Home" />
-            <h1 sx={{variant: 'title'}}>Reading together</h1>
-            <p>Join us on the third Monday of every month</p>
-            <div>
-                <div>
-                    <p>Next month:</p>
-                    <h2>{title}</h2>
-                    <p>
-                        <em>{author}</em>
-                    </p>
-                    <p>{description}</p>
-                </div>
-                <div>
-                    <img src={cover} alt="" />
-                </div>
-            </div>
-        </Layout>
-    )
-}
+}) => (
+    <Layout>
+        <SEO title="Home" />
+        <section>
+            <h1
+                css={css`
+                    line-height: 1.4;
+                    font-size: 3em;
+                    margin: 15vh 0;
+                    a {
+                        color: ${colors.light};
+                    }
+                `}
+            >
+                Discussing books together,
+                <br />
+                on the third Monday
+                <br />
+                of every month at <br />
+                <a href="https://nativehostels.com/bar">Native Hostel & Bar</a>
+                <br /> around 7pm
+            </h1>
+        </section>
+        <hr />
+        {edges.map(({node: {frontmatter}}) => {
+            return <Book {...frontmatter} />
+        })}
+    </Layout>
+)
 
 export default IndexPage
 
 export const query = graphql`
-    query {
+    query($filter: MarkdownRemarkFilterInput) {
         allMarkdownRemark(
-            sort: {fields: frontmatter___date, order: DESC}
-            filter: {fileAbsolutePath: {regex: "/books/"}}
-            limit: 1
+            filter: $filter
+            sort: {fields: frontmatter___date, order: ASC}
         ) {
             edges {
                 node {
@@ -60,7 +105,7 @@ export const query = graphql`
                         author
                         description
                         cover
-                        date
+                        date(formatString: "MMMM DD")
                         link
                     }
                 }
