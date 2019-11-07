@@ -5,13 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
+/** @jsx jsx */
+import {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import {Global, css} from '@emotion/core'
+import {Global, css, jsx} from '@emotion/core'
+import {lora} from '../styles/vars'
 import {useStaticQuery, graphql} from 'gatsby'
 
 import {colors} from '../styles/vars'
-import Header from './header'
+import Header from './header/header'
 
 const Layout = ({children}) => {
     const data = useStaticQuery(graphql`
@@ -25,7 +27,7 @@ const Layout = ({children}) => {
     `)
 
     return (
-        <>
+        <Fragment>
             <Global
                 styles={css`
                     * {
@@ -35,17 +37,34 @@ const Layout = ({children}) => {
                         margin: 0;
                         background: ${colors.dark};
                         color: ${colors.light};
+                        ${lora}
+                    }
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5 {
+                        font-style: italic;
                     }
                 `}
             />
             <Header siteTitle={data.site.siteMetadata.title} />
-            {/* <main>{children}</main> */}
-            <footer>
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
-        </>
+            <main
+                css={css`
+                    display: grid;
+                    grid-template-columns: 1fr 6fr 1fr;
+                    grid-template-areas: '. main .';
+                `}
+            >
+                <div
+                    css={css`
+                        grid-area: main;
+                    `}
+                >
+                    {children}
+                </div>
+            </main>
+        </Fragment>
     )
 }
 

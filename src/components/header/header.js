@@ -3,7 +3,7 @@ import {useState} from 'react'
 import {jsx, css} from '@emotion/core'
 
 import {Link} from 'gatsby'
-import {anton} from '../styles/vars'
+import {anton} from '../../styles/vars'
 import MenuButton from './menu-button'
 import PropTypes from 'prop-types'
 
@@ -22,6 +22,7 @@ const Header = ({siteTitle}) => {
                 css={css`
                     grid-area: main;
                     display: flex;
+                    align-items: flex-start;
                 `}
             >
                 <Link
@@ -29,6 +30,7 @@ const Header = ({siteTitle}) => {
                     css={css`
                         ${anton}
                         text-decoration: none;
+                        font-size: 0.8em;
                         text-align: left;
                         text-transform: uppercase;
                         letter-spacing: 0.6em;

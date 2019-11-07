@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import {css, jsx} from '@emotion/core'
 import styled from '@emotion/styled'
-import {colors} from '../styles/vars'
+import {colors} from '../../styles/vars'
 
 const inner = css`
     width: 40px;

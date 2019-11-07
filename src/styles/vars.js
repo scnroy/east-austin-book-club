@@ -9,6 +9,7 @@ const anton = css`
 const colors = {
     dark: '#4A4A4A',
     light: '#E3E2E2',
+    contrast: '#9B9B9B',
 }
 
 export {lora, anton, colors}
