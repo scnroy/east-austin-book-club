@@ -4,5 +4,6 @@ module.exports = {
     rules: {
         "emotion/jsx-import": "error",
         "emotion/no-vanilla": "error",
+        "prettier/prettier": 2
     }
 }
