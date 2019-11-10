@@ -4,20 +4,19 @@ import {Link} from 'gatsby'
 import {anton, colors} from '../styles/vars'
 
 const btn = css`
-    background-color: ${colors.contrast};
     text-transform: uppercase;
-    border: none;
+    border: 2px solid ${colors.dark};
     display: inline-block;
     border-radius: 2px;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     font-size: 0.8em;
     letter-spacing: 0.3em;
     text-decoration: none;
-    color: ${colors.light};
+    color: ${colors.dark};
     ${anton};
 `
 
-const Button = ({label, href, type, to, onClick}) => {
+const Button = ({label, href, to, ...rest}) => {
     if (to) {
         return (
             <Link to={to} css={btn}>
@@ -35,7 +34,7 @@ const Button = ({label, href, type, to, onClick}) => {
     }
 
     return (
-        <Button onClick={onClick} type={type} css={btn}>
+        <Button css={btn} {...rest}>
             {label}
         </Button>
     )
