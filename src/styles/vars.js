@@ -12,4 +12,10 @@ const colors = {
     contrast: '#9B9B9B',
 }
 
-export {lora, anton, colors}
+const bp = {
+    xs: '400px',
+    sm: '600px',
+    lg: '1600px',
+}
+
+export {lora, anton, colors, bp}

@@ -54,11 +54,15 @@ const Layout = ({children}) => {
                     display: grid;
                     grid-template-columns: 1fr 6fr 1fr;
                     grid-template-areas: '. main .';
+
+                    @media (min-width: '') {
+                    }
                 `}
             >
                 <div
                     css={css`
                         grid-area: main;
+                        overflow: auto;
                     `}
                 >
                     {children}

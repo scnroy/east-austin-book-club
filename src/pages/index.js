@@ -3,57 +3,8 @@ import {jsx, css} from '@emotion/core'
 import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import {colors} from '../styles/vars'
-import {Button} from '../components/button'
-
-const Book = ({date, title, author, description, cover, link}) => (
-    <section>
-        <h2
-            css={css`
-                line-height: 1.4;
-                font-size: 3em;
-            `}
-        >
-            {date}
-        </h2>
-        <div
-            css={css`
-                background-color: ${colors.light};
-                padding: 4rem;
-                color: ${colors.dark};
-                border-radius: 2px;
-                display: flex;
-            `}
-        >
-            <div
-                css={css`
-                    flex-basis: 100%;
-                `}
-            >
-                <img
-                    src={cover}
-                    alt=""
-                    css={css`
-                        max-width: 100%;
-                        height: auto;
-                    `}
-                />
-                <Button label="Check out library book" href={link} />
-            </div>
-            <div
-                css={css`
-                    flex-shrink: 2;
-                `}
-            >
-                <h3>{title}</h3>
-                <p>
-                    <em>{author}</em>
-                </p>
-                <p>{description}</p>
-            </div>
-        </div>
-    </section>
-)
+import Book from '../components/book'
+import {colors, bp} from '../styles/vars'
 
 const IndexPage = ({
     pageContext,
@@ -63,12 +14,21 @@ const IndexPage = ({
 }) => (
     <Layout>
         <SEO title="Home" />
-        <section>
+        <section
+            css={css`
+                min-height: 70vh;
+            `}
+        >
             <h1
                 css={css`
                     line-height: 1.4;
-                    font-size: 3em;
-                    margin: 15vh 0;
+                    margin: 20vh 0 0;
+                    font-size: 2em;
+
+                    @media (min-width: ${bp.sm}) {
+                        font-size: 3rem;
+                    }
+
                     a {
                         color: ${colors.light};
                     }
@@ -84,8 +44,8 @@ const IndexPage = ({
             </h1>
         </section>
         <hr />
-        {edges.map(({node: {frontmatter}}) => {
-            return <Book {...frontmatter} />
+        {edges.map(({node: {frontmatter, fields}}) => {
+            return <Book {...frontmatter} {...fields} />
         })}
     </Layout>
 )
@@ -107,6 +67,9 @@ export const query = graphql`
                         cover
                         date(formatString: "MMMM DD")
                         link
+                    }
+                    fields {
+                        slug
                     }
                 }
             }
