@@ -151,17 +151,12 @@ const Book = ({date, title, author, description, cover, slug, link}) => {
                         }
                     `}
                 >
-                    <Img
-                        fluid={cover.childImageSharp.fluid}
-                        // alt=""
-                        // css={css`
-                        //     max-width: 100%;
-                        //     height: auto;
-                        //     object-fit: contain;
-                        //     object-position: left;
-                        // `}
-                    />
-                    <div>
+                    <Img fluid={cover.childImageSharp.fluid} />
+                    <div
+                        css={css`
+                            margin-top: 1rem;
+                        `}
+                    >
                         <Button label="View on Meetup" href={link} />
                     </div>
                 </div>

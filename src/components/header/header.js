@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import {useState} from 'react'
 import {jsx, css} from '@emotion/core'
-
 import {Link} from 'gatsby'
+import Modal from 'react-modal'
+
 import {anton} from '../../styles/vars'
 import MenuButton from './menu-button'
-import PropTypes from 'prop-types'
 
 const Header = ({siteTitle}) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -42,17 +42,14 @@ const Header = ({siteTitle}) => {
                     {siteTitle}
                 </Link>
                 <MenuButton isActive={isOpen} handleClick={setIsOpen} />
+                <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+                    <Link to="/">Upcoming Reads</Link>
+                    <Link to="/books">Previous Reads</Link>
+                    <Link to="/about">About &amp; Contact</Link>
+                </Modal>
             </div>
         </header>
     )
-}
-
-Header.propTypes = {
-    siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-    siteTitle: ``,
 }
 
 export default Header

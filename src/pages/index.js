@@ -40,7 +40,8 @@ const IndexPage = ({
                 <br />
                 of every month at <br />
                 <a href="https://nativehostels.com/bar">Native Hostel & Bar</a>
-                <br /> around 7pm
+                <br />
+                7pm sharp
             </h1>
         </section>
         <hr />
