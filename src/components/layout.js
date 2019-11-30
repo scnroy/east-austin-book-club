@@ -46,6 +46,9 @@ const Layout = ({children}) => {
                     h5 {
                         font-style: italic;
                     }
+                    a {
+                        color: inherit;
+                    }
                 `}
             />
             <Header siteTitle={data.site.siteMetadata.title} />
