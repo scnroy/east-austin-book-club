@@ -64,7 +64,13 @@ export const query = graphql`
                         title
                         author
                         description
-                        cover
+                        cover {
+                            childImageSharp {
+                                fluid(maxWidth: 1000) {
+                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                }
+                            }
+                        }
                         date(formatString: "MMMM DD")
                         link
                     }

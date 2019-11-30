@@ -22,7 +22,13 @@ export const query = graphql`
             frontmatter {
                 title
                 description
-                cover
+                cover {
+                    childImageSharp {
+                        fluid(maxWidth: 1000) {
+                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                        }
+                    }
+                }
             }
         }
     }

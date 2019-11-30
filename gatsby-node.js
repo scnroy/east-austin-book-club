@@ -5,6 +5,7 @@
  */
 
 const {createFilePath} = require('gatsby-source-filesystem')
+const {fmImagesToRelative} = require('gatsby-remark-relative-images')
 const moment = require('moment')
 const path = require('path')
 
@@ -26,6 +27,7 @@ exports.onCreatePage = ({page, actions}) => {
 
 exports.onCreateNode = ({node, getNode, actions}) => {
     const {createNodeField} = actions
+    fmImagesToRelative(node)
     if (
         node.internal.type === 'MarkdownRemark' &&
         node.fileAbsolutePath.includes('books')
