@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import {useState, useRef, useEffect} from 'react'
 import {Button} from '../components/button'
 import {colors, bp} from '../styles/vars'
+import Img from 'gatsby-image'
 import {Link} from 'gatsby'
 
 const detailsWithButtonExpanded = css`
@@ -22,7 +23,7 @@ const Details = styled('div')`
     }
 `
 
-const Description = ({text}) => {
+const Description = ({description}) => {
     const descriptionRef = useRef(null)
 
     const [expanded, updateExpanded] = useState(false)
@@ -59,9 +60,11 @@ const Description = ({text}) => {
 
     return (
         <Details expanded={expanded}>
-            <div css={withButton && detailsWithButton}>
-                <p ref={descriptionRef}>{text}</p>
-            </div>
+            <div
+                css={withButton && detailsWithButton}
+                ref={descriptionRef}
+                dangerouslySetInnerHTML={{__html: description}}
+            />
             {withButton && (
                 <button
                     css={css`
@@ -91,90 +94,96 @@ const Description = ({text}) => {
     )
 }
 
-const Book = ({date, title, author, description, cover, slug, link}) => (
-    <section
-        css={css`
-            display: flex;
-            flex-direction: column;
-            margin: 4rem 0 10rem;
-
-            @media (min-width: ${bp.lg}) {
-                flex-direction: row;
-            }
-        `}
-    >
-        <h2
+const Book = ({date, title, author, description, cover, slug, link}) => {
+    const formattedDescription = description
+        .split('\n')
+        .map(paragraph => `<p>${paragraph}</p>`)
+        .join('')
+    return (
+        <section
             css={css`
-                line-height: 1.4;
-                flex-basis: 30%;
-                font-size: 2em;
-
-                @media (min-width: ${bp.sm}) {
-                    font-size: 3rem;
-                }
-            `}
-        >
-            {date}
-        </h2>
-        <div
-            css={css`
-                background-color: ${colors.light};
-                color: ${colors.dark};
-                padding: 2rem;
-                border-radius: 2px;
                 display: flex;
                 flex-direction: column;
+                margin: 4rem 0 10rem;
 
-                @media (min-width: 1200px) {
-                    padding: 4rem;
-                    flex-basis: 70%;
+                @media (min-width: ${bp.lg}) {
                     flex-direction: row;
                 }
             `}
         >
+            <h2
+                css={css`
+                    line-height: 1.4;
+                    flex-basis: 30%;
+                    font-size: 2em;
+
+                    @media (min-width: ${bp.sm}) {
+                        font-size: 3rem;
+                    }
+                `}
+            >
+                {date}
+            </h2>
             <div
                 css={css`
-                    margin-bottom: 2rem;
+                    background-color: ${colors.light};
+                    color: ${colors.dark};
+                    padding: 2rem;
+                    border-radius: 2px;
                     display: flex;
                     flex-direction: column;
+
                     @media (min-width: 1200px) {
-                        margin-bottom: 0;
-                        flex-basis: 80%;
+                        padding: 4rem;
+                        flex-basis: 70%;
+                        flex-direction: row;
                     }
                 `}
             >
-                <img
-                    src={cover}
-                    alt=""
+                <div
                     css={css`
-                        max-width: 100%;
-                        height: auto;
-                        object-fit: contain;
-                        object-position: left;
+                        margin-bottom: 2rem;
+                        display: flex;
+                        flex-direction: column;
+                        @media (min-width: 1200px) {
+                            margin-bottom: 0;
+                            flex-basis: 80%;
+                        }
                     `}
-                />
-                <div>
-                    <Button label="View on Meetup" href={link} />
+                >
+                    <Img
+                        fluid={cover.childImageSharp.fluid}
+                        // alt=""
+                        // css={css`
+                        //     max-width: 100%;
+                        //     height: auto;
+                        //     object-fit: contain;
+                        //     object-position: left;
+                        // `}
+                    />
+                    <div>
+                        <Button label="View on Meetup" href={link} />
+                    </div>
+                </div>
+                <div
+                    css={css`
+                        flex-shrink: 2;
+                        @media (min-width: 1200px) {
+                            margin-left: 2rem;
+                        }
+                    `}
+                >
+                    <Link to={slug}>
+                        <h3>{title}</h3>
+                    </Link>
+                    <p>
+                        <em>{author}</em>
+                    </p>
+                    <Description description={formattedDescription} />
                 </div>
             </div>
-            <div
-                css={css`
-                    flex-shrink: 2;
-                    @media (min-width: 1200px) {
-                        margin-left: 2rem;
-                    }
-                `}
-            >
-                <Link to={slug}>
-                    <h3>{title}</h3>
-                </Link>
-                <p>
-                    <em>{author}</em>
-                </p>
-                <Description text={description} />
-            </div>
-        </div>
-    </section>
-)
+        </section>
+    )
+}
 
 export default Book
