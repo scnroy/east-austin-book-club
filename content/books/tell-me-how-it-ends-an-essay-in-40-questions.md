@@ -3,7 +3,7 @@ date: 2019-12-16T22:52:42.950Z
 title: 'Tell Me How It Ends: An Essay in 40 Questions'
 author: 'Valeria Luiselli '
 link: 'https://austin.bibliocommons.com/item/show/1762415067'
-cover: /assets/9200000079601640.jpg
+cover: /assets/luiselli_tellmehow_9781566894951_1024x1024.webp
 description: >-
   From 2014 to 2015, Mexican writer Luiselli (The Story of My Teeth) worked as a
   translator for the U.S. Citizen and Immigration Services in New York, where
