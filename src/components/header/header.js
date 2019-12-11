@@ -2,10 +2,47 @@
 import {useState} from 'react'
 import {jsx, css} from '@emotion/core'
 import {Link} from 'gatsby'
-import Modal from 'react-modal'
 
-import {anton} from '../../styles/vars'
+import {anton, bp, colors} from '../../styles/vars'
 import MenuButton from './menu-button'
+
+const Menu = () => (
+    <ul
+        css={css`
+            position: absolute;
+            margin-left: 0;
+            top: 100%;
+
+            &:before {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                content: '';
+                background: ${colors.dark};
+                z-index: -1;
+            }
+
+            font-style: italic;
+            font-weight: 600;
+            line-height: 1.4;
+            font-size: 2em;
+
+            @media (min-width: ${bp.sm}) {
+                font-size: 3rem;
+            }
+
+            a {
+                display: block;
+            }
+        `}
+    >
+        <Link to="/">Upcoming Reads</Link>
+        <Link to="/books">Previous Reads</Link>
+        <Link to="/about">About &amp; Contact</Link>
+    </ul>
+)
 
 const Header = ({siteTitle}) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -20,6 +57,7 @@ const Header = ({siteTitle}) => {
         >
             <div
                 css={css`
+                    position: relative;
                     grid-area: main;
                     display: flex;
                     align-items: flex-start;
@@ -42,11 +80,7 @@ const Header = ({siteTitle}) => {
                     {siteTitle}
                 </Link>
                 <MenuButton isActive={isOpen} handleClick={setIsOpen} />
-                <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-                    <Link to="/">Upcoming Reads</Link>
-                    <Link to="/books">Previous Reads</Link>
-                    <Link to="/about">About &amp; Contact</Link>
-                </Modal>
+                <Menu isOpen={isOpen} />
             </div>
         </header>
     )

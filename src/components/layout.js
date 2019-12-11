@@ -1,82 +1,113 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 /** @jsx jsx */
 import {Fragment} from 'react'
-import PropTypes from 'prop-types'
 import {Global, css, jsx} from '@emotion/core'
+import styled from '@emotion/styled'
+import {Link} from 'gatsby'
+// import Img from 'gatsby-image'
+
 import {lora} from '../styles/vars'
-import {useStaticQuery, graphql} from 'gatsby'
 
-import {colors} from '../styles/vars'
-import Header from './header/header'
+const Menu = () => (
+    <ul
+        css={css`
+            list-style: none;
+            margin: 0;
+            display: flex;
 
-const Layout = ({children}) => {
-    const data = useStaticQuery(graphql`
-        query SiteTitleQuery {
-            site {
-                siteMetadata {
-                    title
-                }
+            li {
+                margin-right: 1rem;
+                font-size: 1.2rem;
             }
-        }
-    `)
 
-    return (
-        <Fragment>
-            <Global
-                styles={css`
-                    * {
-                        box-sizing: border-box;
-                    }
-                    body {
-                        margin: 0;
-                        background: ${colors.dark};
-                        color: ${colors.light};
-                        ${lora}
-                    }
-                    h1,
-                    h2,
-                    h3,
-                    h4,
-                    h5 {
-                        font-style: italic;
-                    }
-                    a {
-                        color: inherit;
-                    }
-                `}
-            />
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <main
+            a {
+                text-decoration: none;
+            }
+        `}
+    >
+        <li>
+            <Link to="/">Upcoming Reads</Link>
+        </li>
+        <li>
+            <Link to="/books">Previous Reads</Link>
+        </li>
+        <li>
+            <Link to="/about">About &amp; Contact</Link>
+        </li>
+    </ul>
+)
+
+const Left = styled.div`
+    position: relative;
+    font-style: italic;
+    font-size: 2rem;
+    padding: 0.5rem;
+
+    @media (min-aspect-ratio: 534/277) and (orientation: landscape) {
+        font-size: 11vh;
+    }
+
+    @media (min-width: 720px) {
+        font-size: 4vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+    }
+`
+
+const Right = styled.div`
+    min-height: 100%;
+    padding: 1rem;
+
+    @media (min-width: 720px) {
+        width: 50%;
+        margin-left: 50%;
+    }
+`
+
+const Layout = ({children}) => (
+    <Fragment>
+        <Global
+            styles={css`
+                * {
+                    box-sizing: border-box;
+                }
+                body {
+                    margin: 0;
+                    ${lora}
+                }
+                h1,
+                h2,
+                h3,
+                h4,
+                h5 {
+                    font-style: italic;
+                }
+                a {
+                    color: inherit;
+                }
+            `}
+        />
+        <Left>
+            <h1
                 css={css`
-                    display: grid;
-                    grid-template-columns: 1fr 6fr 1fr;
-                    grid-template-areas: '. main .';
-
-                    @media (min-width: '') {
-                    }
+                    font-size: inherit;
                 `}
             >
-                <div
-                    css={css`
-                        grid-area: main;
-                        overflow: auto;
-                    `}
-                >
-                    {children}
-                </div>
-            </main>
-        </Fragment>
-    )
-}
-
-Layout.propTypes = {
-    children: PropTypes.node.isRequired,
-}
+                <Link to="/">East Austin Bookclub</Link>
+            </h1>
+            <p>
+                Discussing books together, on the third Monday of every month at{' '}
+                <a href="https://nativehostels.com/bar">Native Hostel & Bar</a>{' '}
+                7pm sharp
+            </p>
+        </Left>
+        <Right>
+            <Menu />
+            {children}
+        </Right>
+        {/* <Img fluid={image} /> */}
+    </Fragment>
+)
 
 export default Layout

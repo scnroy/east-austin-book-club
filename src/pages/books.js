@@ -11,7 +11,7 @@ const IndexPage = ({
     },
 }) => (
     <Layout>
-        <SEO title="Upcoming Reads" />
+        <SEO title="Previous Reads" />
         <ul
             css={css`
                 list-style: none;
@@ -40,10 +40,10 @@ const IndexPage = ({
 export default IndexPage
 
 export const query = graphql`
-    query($filter: MarkdownRemarkFilterInput) {
+    query {
         allMarkdownRemark(
-            filter: $filter
-            sort: {fields: frontmatter___date, order: ASC}
+            sort: {fields: frontmatter___date, order: DESC}
+            filter: {fileAbsolutePath: {regex: "/books/"}}
         ) {
             edges {
                 node {
@@ -58,7 +58,7 @@ export const query = graphql`
                                 }
                             }
                         }
-                        date(formatString: "MMMM DD")
+                        date(formatString: "MMMM DD YYYY")
                         link
                     }
                     fields {
