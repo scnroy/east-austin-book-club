@@ -7,13 +7,12 @@ import {btn} from '../components/button'
 import {montserrat} from '../styles/vars'
 
 const IndexPage = ({
-    pageContext,
-    location: {pathname},
+    path,
     data: {
         allMarkdownRemark: {edges},
     },
 }) => (
-    <Layout pathname={pathname}>
+    <Layout pathname={path}>
         <SEO title="Upcoming Reads" />
         <ul
             css={css`

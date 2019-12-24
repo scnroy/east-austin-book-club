@@ -5,13 +5,12 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const IndexPage = ({
-    pageContext,
-    location: {pathname},
+    path,
     data: {
         allMarkdownRemark: {edges},
     },
 }) => (
-    <Layout pathname={pathname}>
+    <Layout pathname={path}>
         <SEO title="Previous Reads" />
         <ul
             css={css`

@@ -14,14 +14,14 @@ const Description = styled.p`
 `
 
 export default ({
-    location: {pathname},
+    path,
     data: {
         markdownRemark: {
             frontmatter: {title, author, description, cover},
         },
     },
 }) => (
-    <Layout pathname={pathname}>
+    <Layout pathname={path}>
         <Title>{title}</Title>
         <p>by {author}</p>
         <Description>{description}</Description>
