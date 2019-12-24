@@ -25,11 +25,32 @@ const IndexPage = ({
                             margin: 0;
                         `}
                     >
-                        {frontmatter.date}
-                    </h3>
-                    <p>
                         <Link to={fields.slug}>{frontmatter.title}</Link> by{' '}
                         {frontmatter.author}
+                    </h3>
+                    <p
+                        css={css`
+                            /* font-style: italic; */
+                            /* margin-bottom: 0; */
+                        `}
+                    ></p>
+                    <p
+                        css={css`
+                            padding-left: 1em;
+                            border-left: 2px solid black;
+                        `}
+                    >
+                        {frontmatter.description}
+                        <br />
+                        <a
+                            href={frontmatter.link}
+                            css={css`
+                                display: inline-block;
+                                margin-top: 0.5rem;
+                            `}
+                        >
+                            RSVP ⇾
+                        </a>
                     </p>
                 </li>
             ))}
@@ -40,9 +61,9 @@ const IndexPage = ({
 export default IndexPage
 
 export const query = graphql`
-    query($filter: MarkdownRemarkFilterInput) {
+    query($futureFilter: MarkdownRemarkFilterInput) {
         allMarkdownRemark(
-            filter: $filter
+            filter: $futureFilter
             sort: {fields: frontmatter___date, order: ASC}
         ) {
             edges {

@@ -40,4 +40,4 @@ const Button = ({label, href, to, ...rest}) => {
     )
 }
 
-export {Button}
+export {Button, btn}

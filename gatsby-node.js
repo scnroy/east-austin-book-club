@@ -16,9 +16,14 @@ exports.onCreatePage = ({page, actions}) => {
         ...page,
         context: {
             ...page.context,
-            filter: {
+            futureFilter: {
                 frontmatter: {
                     date: {ne: null, gte: moment().format()},
+                },
+            },
+            pastFilter: {
+                frontmatter: {
+                    date: {ne: null, lte: moment().format()},
                 },
             },
         },

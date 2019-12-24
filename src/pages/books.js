@@ -40,10 +40,10 @@ const IndexPage = ({
 export default IndexPage
 
 export const query = graphql`
-    query {
+    query($pastFilter: MarkdownRemarkFilterInput) {
         allMarkdownRemark(
+            filter: $pastFilter
             sort: {fields: frontmatter___date, order: DESC}
-            filter: {fileAbsolutePath: {regex: "/books/"}}
         ) {
             edges {
                 node {

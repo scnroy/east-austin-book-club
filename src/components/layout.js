@@ -37,10 +37,13 @@ const Menu = () => (
 )
 
 const Left = styled.div`
+    height: 100%;
     position: relative;
-    font-style: italic;
-    font-size: 2rem;
     padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 2rem;
 
     @media (min-aspect-ratio: 534/277) and (orientation: landscape) {
         font-size: 11vh;
@@ -91,10 +94,16 @@ const Layout = ({children}) => (
         <Left>
             <h1
                 css={css`
-                    font-size: inherit;
+                    font-size: 6vw;
+                    line-height: 1.2;
+                    margin-bottom: 6.185vw;
+
+                    a {
+                        text-decoration: none;
+                    }
                 `}
             >
-                <Link to="/">East Austin Bookclub</Link>
+                <Link to="/">East&nbsp;Austin Book&nbsp;Club</Link>
             </h1>
             <p>
                 Discussing books together, on the third Monday of every month at{' '}

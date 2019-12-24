@@ -1,7 +1,7 @@
 ---
 date: 2020-01-14T01:46:08.202Z
-title: 'Fledgling '
-author: 'Octavia Butler '
+title: 'Fledgling'
+author: 'Octavia Butler'
 link: 'https://www.meetup.com/East-Austin-Bookclub/events/266524812/'
 cover: /assets/fledgling_o-bulter.jpg
 description: >-
