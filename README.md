@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2acfc836-238f-4d17-b10c-53229913f683/deploy-status)](https://app.netlify.com/sites/eastaustinbookclub/deploys)
+
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
