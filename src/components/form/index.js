@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+/** @jsx jsx */
+import {useState} from 'react'
+import {jsx, css} from '@emotion/core'
 import {Formik} from 'formik'
 import axios from 'axios'
 import FormMessages from './messages'
@@ -47,7 +49,11 @@ const ContactForm = () => {
     })
 
     return (
-        <div>
+        <div
+            css={css`
+                padding-right: 2rem;
+            `}
+        >
             {submit !== null ? (
                 <FormMessages status={submit} handleClick={resetForm} />
             ) : (

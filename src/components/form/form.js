@@ -2,10 +2,12 @@
 import {jsx, css} from '@emotion/core'
 import styled from '@emotion/styled'
 import {Form, Field} from 'formik'
+import {btn} from '../button'
+import {montserrat} from '../../styles/vars'
 // import Recaptcha from 'react-google-recaptcha'
 
 const formControl = css`
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     width: 100%;
     border: none;
     border-bottom: 1px solid black;
@@ -47,6 +49,9 @@ const FormGroup = styled('div')`
     position: relative;
     margin-bottom: 1rem;
     label {
+        ${montserrat}
+        display: block;
+        margin-bottom: 0.5rem;
         &.has-error {
             color: red;
         }
@@ -54,6 +59,7 @@ const FormGroup = styled('div')`
 
     input,
     textarea {
+        font-size: 0.8rem;
         &:focus {
             outline: none;
         }
@@ -68,6 +74,8 @@ const ErrorMessage = ({touched, errors}) =>
     touched && errors ? (
         <div
             css={css`
+                ${montserrat}
+                font-size: .8rem;
                 color: red;
                 position: absolute;
                 bottom: 0;
@@ -148,20 +156,7 @@ const ContactFormInner = ({
                 </label>
                 <Field name="gotcha" type="text" />
             </div>
-            {/* {touched.email && touched.name ? (
-                <div css={{marginBottom: '2rem'}}>
-                    <Recaptcha
-                        sitekey={RECAPTCHA_KEY}
-                        onChange={response => {
-                            setFieldValue('recaptcha', response)
-                        }}
-                        theme="dark"
-                    />
-                </div>
-            ) : (
-                ''
-            )} */}
-            <button type="submit" disabled={isSubmitting}>
+            <button type="submit" disabled={isSubmitting} css={btn}>
                 Submit
             </button>
         </Form>
