@@ -3,8 +3,8 @@ import {css} from '@emotion/core'
 const lora = css`
     font-family: 'Lora', serif;
 `
-const anton = css`
-    font-family: 'Anton', sans-serif;
+const montserrat = css`
+    font-family: 'Montserrat', sans-serif;
 `
 const colors = {
     dark: '#4A4A4A',
@@ -18,4 +18,4 @@ const bp = {
     lg: '1600px',
 }
 
-export {lora, anton, colors, bp}
+export {lora, montserrat, colors, bp}

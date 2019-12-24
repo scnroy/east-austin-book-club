@@ -3,6 +3,7 @@ import {jsx, css} from '@emotion/core'
 import {graphql, Link} from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import {btn} from '../components/button'
 
 const IndexPage = ({
     pageContext,
@@ -45,8 +46,8 @@ const IndexPage = ({
                         <a
                             href={frontmatter.link}
                             css={css`
-                                display: inline-block;
-                                margin-top: 0.5rem;
+                                margin-top: 1rem;
+                                ${btn}
                             `}
                         >
                             RSVP ⇾

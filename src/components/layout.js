@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import {Link} from 'gatsby'
 // import Img from 'gatsby-image'
 
-import {lora} from '../styles/vars'
+import {lora, montserrat} from '../styles/vars'
 
 const Menu = () => (
     <ul
@@ -13,6 +13,7 @@ const Menu = () => (
             list-style: none;
             margin: 0;
             display: flex;
+            justify-content: space-between;
 
             li {
                 margin-right: 1rem;
@@ -20,6 +21,7 @@ const Menu = () => (
             }
 
             a {
+                ${montserrat}
                 text-decoration: none;
             }
         `}
@@ -79,7 +81,6 @@ const Layout = ({children}) => (
                     margin: 0;
                     ${lora}
                 }
-                h1,
                 h2,
                 h3,
                 h4,
@@ -94,8 +95,10 @@ const Layout = ({children}) => (
         <Left>
             <h1
                 css={css`
+                    ${montserrat}
                     font-size: 6vw;
                     line-height: 1.2;
+                    font-weight: 400;
                     margin-bottom: 6.185vw;
 
                     a {

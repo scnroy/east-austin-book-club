@@ -2,7 +2,7 @@ import Typography from 'typography'
 const typography = new Typography({
     googleFonts: [
         {
-            name: 'Anton',
+            name: 'Montserrat',
             styles: ['400'],
         },
         {
@@ -12,7 +12,7 @@ const typography = new Typography({
     ],
     baseFontSize: '18px',
     headerFontFamily: ['Lora', 'serif'],
-    bodyFontFamily: ['Anton', 'sans-serif'],
+    bodyFontFamily: ['Lora', 'sans-serif'],
 })
 const {rhythm, scale} = typography
 export {rhythm, scale, typography as default}
