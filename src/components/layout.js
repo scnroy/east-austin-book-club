@@ -6,37 +6,77 @@ import {Link} from 'gatsby'
 // import Img from 'gatsby-image'
 
 import {lora, montserrat} from '../styles/vars'
+import {btn} from '../components/button'
 
-const Menu = () => (
-    <ul
-        css={css`
-            list-style: none;
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
+const getCurrentIndex = pathname => {
+    if (pathname.includes('about')) {
+        return 3
+    } else if (pathname === '/') {
+        return 1
+    }
 
-            li {
-                margin-right: 1rem;
-                font-size: 1.2rem;
-            }
+    // book is a previous read
+    return 2
+}
 
-            a {
-                ${montserrat}
-                text-decoration: none;
-            }
-        `}
-    >
-        <li>
-            <Link to="/">Upcoming Reads</Link>
-        </li>
-        <li>
-            <Link to="/books">Previous Reads</Link>
-        </li>
-        <li>
-            <Link to="/about">About &amp; Contact</Link>
-        </li>
-    </ul>
-)
+const Menu = ({pathname}) => {
+    const isActive = getCurrentIndex(pathname)
+    return (
+        <ul
+            css={css`
+                list-style: none;
+                margin: 0 0 3rem;
+                display: flex;
+                justify-content: space-between;
+
+                @media (min-width: 720px) {
+                    margin: 0 0 1rem;
+                }
+
+                li {
+                    margin-right: 1rem;
+                    font-size: 2.4vw;
+
+                    @media (min-width: 720px) {
+                        font-size: 1.3vw;
+                    }
+
+                    @media (min-width: 880px) {
+                        font-size: 1.6vw;
+                    }
+
+                    &:nth-of-type(${isActive}) {
+                        a {
+                            background-color: white;
+                        }
+                    }
+                }
+
+                a {
+                    @media (max-width: 530px) {
+                        padding: 0.5rem 0.5rem;
+                    }
+                }
+            `}
+        >
+            <li>
+                <Link to="/" css={btn}>
+                    Upcoming Reads
+                </Link>
+            </li>
+            <li>
+                <Link to="/books" css={btn}>
+                    Previous Reads
+                </Link>
+            </li>
+            <li>
+                <Link to="/about" css={btn}>
+                    About &amp; Contact
+                </Link>
+            </li>
+        </ul>
+    )
+}
 
 const Left = styled.div`
     height: 100%;
@@ -70,7 +110,7 @@ const Right = styled.div`
     }
 `
 
-const Layout = ({children}) => (
+const Layout = ({pathname, children}) => (
     <Fragment>
         <Global
             styles={css`
@@ -115,7 +155,7 @@ const Layout = ({children}) => (
             </p>
         </Left>
         <Right>
-            <Menu />
+            <Menu pathname={pathname} />
             {children}
         </Right>
         {/* <Img fluid={image} /> */}

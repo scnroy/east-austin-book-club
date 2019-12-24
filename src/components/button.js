@@ -16,12 +16,17 @@ const btn = css`
     color: ${colors.dark};
     ${montserrat};
     position: relative;
+    transform: background-color 0.5s ease-in-out;
+
+    &.active {
+        background-color: white;
+    }
 
     &::after {
         content: '';
         position: absolute;
-        left: 4px;
-        top: 4px;
+        left: 6px;
+        top: 6px;
         border: 1px solid ${colors.dark};
         border-radius: 2px;
         width: 100%;
@@ -32,7 +37,7 @@ const btn = css`
 
     &:hover {
         &::after {
-            transform: translate(-4px, -4px);
+            transform: translate(-6px, -6px);
         }
     }
 `

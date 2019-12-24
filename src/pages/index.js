@@ -7,11 +7,12 @@ import {btn} from '../components/button'
 
 const IndexPage = ({
     pageContext,
+    location: {pathname},
     data: {
         allMarkdownRemark: {edges},
     },
 }) => (
-    <Layout>
+    <Layout pathname={pathname}>
         <SEO title="Upcoming Reads" />
         <ul
             css={css`

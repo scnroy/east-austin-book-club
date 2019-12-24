@@ -3,13 +3,14 @@ import Layout from '../components/layout'
 import {graphql} from 'gatsby'
 
 export default ({
+    location: {pathname},
     data: {
         markdownRemark: {
             frontmatter: {title, description, cover},
         },
     },
 }) => (
-    <Layout>
+    <Layout pathname={pathname}>
         <h1>{title}</h1>
         <p>{description}</p>
         <img src={cover} alt="" />
