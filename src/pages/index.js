@@ -4,6 +4,7 @@ import {graphql, Link} from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import {btn} from '../components/button'
+import {montserrat} from '../styles/vars'
 
 const IndexPage = ({
     pageContext,
@@ -24,7 +25,7 @@ const IndexPage = ({
                 <li>
                     <h3
                         css={css`
-                            margin: 0;
+                            margin-bottom: 0.5rem;
                         `}
                     >
                         <Link to={fields.slug}>{frontmatter.title}</Link> by{' '}
@@ -32,10 +33,11 @@ const IndexPage = ({
                     </h3>
                     <p
                         css={css`
-                            /* font-style: italic; */
-                            /* margin-bottom: 0; */
+                            ${montserrat}
                         `}
-                    ></p>
+                    >
+                        {frontmatter.date}
+                    </p>
                     <p
                         css={css`
                             padding-left: 1em;
@@ -81,7 +83,7 @@ export const query = graphql`
                                 }
                             }
                         }
-                        date(formatString: "MMMM DD")
+                        date(formatString: "MMMM DD, YYYY")
                         link
                     }
                     fields {
