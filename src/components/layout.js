@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import {Fragment} from 'react'
+import {Fragment, useState, useEffect} from 'react'
 import {Global, css, jsx} from '@emotion/core'
 import styled from '@emotion/styled'
 import {Link} from 'gatsby'
@@ -15,12 +15,16 @@ const getCurrentIndex = pathname => {
         return 1
     }
 
-    // book is a previous read
     return 2
 }
 
 const Menu = ({pathname}) => {
-    const isActive = getCurrentIndex(pathname)
+    const [isActive, setIsActive] = useState(false)
+
+    useEffect(() => {
+        setIsActive(getCurrentIndex(pathname))
+    }, [pathname])
+
     return (
         <ul
             css={css`
@@ -29,32 +33,32 @@ const Menu = ({pathname}) => {
                 display: flex;
                 justify-content: space-between;
 
-                @media (min-width: 720px) {
+                @media (max-width: 520px) {
+                    flex-direction: column;
+                    text-align: center;
+
+                    a {
+                        width: 100%;
+                        padding: 0.5rem 0.5rem;
+                    }
+                }
+
+                @media (min-width: 880px) {
                     margin: 0 0 1rem;
                 }
 
                 li {
                     margin-right: 1rem;
-                    font-size: 2.4vw;
-
-                    @media (min-width: 720px) {
-                        font-size: 1.3vw;
-                    }
+                    font-size: 1em;
 
                     @media (min-width: 880px) {
-                        font-size: 1.6vw;
+                        font-size: 1.3vw;
                     }
 
                     &:nth-of-type(${isActive}) {
                         a {
                             background-color: white;
                         }
-                    }
-                }
-
-                a {
-                    @media (max-width: 530px) {
-                        padding: 0.5rem 0.5rem;
                     }
                 }
             `}
@@ -84,14 +88,13 @@ const Left = styled.div`
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
-
-    font-size: 2rem;
+    font-size: 8vw;
 
     @media (min-aspect-ratio: 534/277) and (orientation: landscape) {
         font-size: 11vh;
     }
 
-    @media (min-width: 720px) {
+    @media (min-width: 880px) {
         font-size: 4vw;
         position: fixed;
         top: 0;
@@ -104,7 +107,7 @@ const Right = styled.div`
     min-height: 100%;
     padding: 1rem;
 
-    @media (min-width: 720px) {
+    @media (min-width: 880px) {
         width: 50%;
         margin-left: 50%;
     }
@@ -136,12 +139,17 @@ const Layout = ({pathname, children}) => (
             <h1
                 css={css`
                     ${montserrat}
-                    font-size: 6vw;
+                    font-size: 8vw;
                     line-height: 1.2;
                     font-weight: 400;
                     margin-bottom: 6.185vw;
 
+                    @media (min-width: 720px) {
+                        font-size: 6vw;
+                    }
+
                     a {
+                        text-transform: uppercase;
                         text-decoration: none;
                     }
                 `}
