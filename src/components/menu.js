@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import {jsx, css} from '@emotion/core'
 import {useState, useEffect} from 'react'
-import {btn} from './components/button'
+import {btn} from './button'
 import {Link} from 'gatsby'
 
 const getCurrentIndex = pathname => {
