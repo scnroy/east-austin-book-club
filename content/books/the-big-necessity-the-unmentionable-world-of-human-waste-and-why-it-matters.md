@@ -1,5 +1,5 @@
 ---
-date: 2020-03-23T01:04:07.355Z
+date: 2020-03-24T01:04:07.355Z
 title: 'The Big Necessity: The Unmentionable World of Human Waste and Why It Matters'
 author: 'Rose George '
 cover: /assets/41gakhxvekl._sx331_bo1-204-203-200_.jpg
