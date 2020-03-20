@@ -1,9 +1,16 @@
 ---
 date: 2020-03-23T01:04:07.355Z
-title: 'The Big Necessity: The Unmentionable World of Human Waste and Why It Matters'
+title: >-
+  Digital Bookclub: The Big Necessity: The Unmentionable World of Human Waste
+  and Why It Matters
 author: 'Rose George '
 cover: /assets/41gakhxvekl._sx331_bo1-204-203-200_.jpg
 description: >-
+  Contact us for the hangouts link 
+
+
+
+
   Bodily waste is common to all and as natural as breathing. We prefer not to
   talk about it, but we should―even those of us who take care of our business in
   pristine, sanitary conditions. Disease spread by bodily waste kills more
