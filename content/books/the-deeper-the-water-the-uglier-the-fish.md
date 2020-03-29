@@ -2,7 +2,7 @@
 date: 2020-05-18T18:22:28.830Z
 title: 'The Deeper the Water the Uglier the Fish '
 author: Katya Apekina
-cover: assets/91FcMmK2sEL.jpg
+cover: /assets/91FcMmK2sEL.jpg
 description: >-
   It’s 16-year-old Edie who finds their mother Marianne dangling in the living
   room from an old jump rope, puddle of urine on the floor, barely alive.

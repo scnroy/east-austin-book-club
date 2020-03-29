@@ -1,9 +1,9 @@
 ---
 date: 2020-04-20T12:57:24.779Z
-title: '"A Tale for the Time Being"'
+title: 'A Tale for the Time Being'
 author: 'Ruth Ozeki '
 link: 'https://austin.bibliocommons.com/item/show/914284067'
-cover: assets/9780670067046-us.jpg
+cover: /assets/9780670067046-us.jpg
 description: >-
   In Tokyo, sixteen-year-old Nao has decided there’s only one escape from her
   aching loneliness and her classmates’ bullying. But before she ends it all,
