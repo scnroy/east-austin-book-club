@@ -5,7 +5,8 @@ author: 'Ruth Ozeki '
 link: 'https://austin.bibliocommons.com/item/show/914284067'
 cover: /assets/9780670067046-us.jpg
 description: >-
-  ***Meeting digitally in April, contact us for the call-in information***\
+  Meeting digitally in April, contact us for the call-in information
+
 
   In Tokyo, sixteen-year-old Nao has decided there’s only one escape from her
   aching loneliness and her classmates’ bullying. But before she ends it all,
