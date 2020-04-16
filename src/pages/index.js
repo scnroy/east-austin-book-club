@@ -40,7 +40,7 @@ const Book = ({slug, title, author, date, html, link}) => (
                 ${btn}
             `}
         >
-            RSVP ⇾
+            Check out ⇾
         </a>
     </li>
 )

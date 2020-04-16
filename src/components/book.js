@@ -19,7 +19,7 @@ const Details = styled('div')`
     position: relative;
     & > div {
         position: relative;
-        ${props => (props.expanded ? detailsWithButtonExpanded : '')}
+        ${(props) => (props.expanded ? detailsWithButtonExpanded : '')}
     }
 `
 
@@ -97,7 +97,7 @@ const Description = ({description}) => {
 const Book = ({date, title, author, description, cover, slug, link}) => {
     const formattedDescription = description
         .split('\n')
-        .map(paragraph => `<p>${paragraph}</p>`)
+        .map((paragraph) => `<p>${paragraph}</p>`)
         .join('')
     return (
         <section
