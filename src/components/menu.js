@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react'
 import {btn} from './button'
 import {Link} from 'gatsby'
 
-const getCurrentIndex = pathname => {
+const getCurrentIndex = (pathname) => {
     if (pathname.includes('about')) {
         return 3
     } else if (pathname === '/') {
