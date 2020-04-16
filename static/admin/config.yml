@@ -36,5 +36,5 @@ collections:
       - { name: author, label: Author }
       - { name: link, label: Link, required: false }
       - { name: cover, label: Book cover, widget: image }
-      - { name: description, label: Description, widget: markdown }
       - { name: questions, label: Questions, widget: markdown, required: false }
+      - { name: body, label: Description, widget: markdown }

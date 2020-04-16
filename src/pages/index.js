@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 import {btn} from '../components/button'
 import {montserrat} from '../styles/vars'
 
-const Book = ({slug, title, author, date, description, link}) => (
+const Book = ({slug, title, author, date, html, link}) => (
     <li
         css={css`
             margin-bottom: 3rem;
@@ -26,24 +26,22 @@ const Book = ({slug, title, author, date, description, link}) => (
         >
             {date}
         </p>
-        <p
+        <div
             css={css`
                 padding-left: 1em;
                 border-left: 2px solid black;
             `}
+            dangerouslySetInnerHTML={{__html: html}}
+        />
+        <a
+            href={link}
+            css={css`
+                margin-top: 1rem;
+                ${btn}
+            `}
         >
-            {description}
-            <br />
-            <a
-                href={link}
-                css={css`
-                    margin-top: 1rem;
-                    ${btn}
-                `}
-            >
-                RSVP ⇾
-            </a>
-        </p>
+            RSVP ⇾
+        </a>
     </li>
 )
 
@@ -61,8 +59,13 @@ const IndexPage = ({
                 margin: 0;
             `}
         >
-            {edges.map(({node: {frontmatter, fields}}) => (
-                <Book {...frontmatter} {...fields} key={fields.slug} />
+            {edges.map(({node: {frontmatter, fields, html}}) => (
+                <Book
+                    {...frontmatter}
+                    {...fields}
+                    key={fields.slug}
+                    html={html}
+                />
             ))}
         </ul>
     </Layout>
@@ -81,7 +84,6 @@ export const query = graphql`
                     frontmatter {
                         title
                         author
-                        description
                         cover {
                             childImageSharp {
                                 fluid(maxWidth: 1000) {
@@ -95,6 +97,7 @@ export const query = graphql`
                     fields {
                         slug
                     }
+                    html
                 }
             }
         }

@@ -50,7 +50,6 @@ export const query = graphql`
                     frontmatter {
                         title
                         author
-                        description
                         cover {
                             childImageSharp {
                                 fluid(maxWidth: 1000) {
@@ -59,7 +58,6 @@ export const query = graphql`
                             }
                         }
                         date(formatString: "MMMM DD, YYYY")
-                        link
                     }
                     fields {
                         slug

@@ -10,7 +10,7 @@ const Title = styled.h2`
     margin-bottom: 0.5rem;
 `
 
-const Description = styled.p`
+const Description = styled.div`
     padding-left: 1rem;
     border-left: 2px solid black;
 `
@@ -20,6 +20,7 @@ export default ({
     data: {
         markdownRemark: {
             frontmatter: {title, author, description, cover},
+            html,
         },
     },
 }) => (
@@ -48,7 +49,7 @@ export default ({
         />
         <Title>{title}</Title>
         <p>by {author}</p>
-        <Description>{description}</Description>
+        <Description dangerouslySetInnerHTML={{__html: html}} />
     </Layout>
 )
 
@@ -57,7 +58,6 @@ export const query = graphql`
         markdownRemark(fields: {slug: {eq: $slug}}) {
             frontmatter {
                 title
-                description
                 author
                 cover {
                     childImageSharp {
@@ -67,6 +67,7 @@ export const query = graphql`
                     }
                 }
             }
+            html
         }
     }
 `
