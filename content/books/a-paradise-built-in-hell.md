@@ -1,7 +1,8 @@
 ---
 date: 2020-06-15T18:23:59.812Z
 title: A Paradise Built in Hell
-author: 'Rebecca Solnit'
+author: Rebecca Solnit
+link: https://austin.bibliocommons.com/item/show/957425067
 cover: /assets/81mZIY9qcJL.jpg
 ---
 Prize-winning author Solnit (A Field Guide to Getting Lost) delivers an
