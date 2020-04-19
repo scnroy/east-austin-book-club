@@ -2,6 +2,7 @@
 date: 2020-07-20T15:19:24.302Z
 title: Little Eyes
 author: Samanta Schweblin
+link: https://www.penguinrandomhouse.com/books/603657/little-eyes-by-samanta-schweblin/
 cover: assets/screen-shot-2020-04-04-at-10.16.14-am.png
 questions: ""
 ---
