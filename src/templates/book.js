@@ -19,34 +19,36 @@ export default ({
     path,
     data: {
         markdownRemark: {
-            frontmatter: {title, author, description, cover},
+            frontmatter: {title, author, cover},
             html,
         },
     },
 }) => (
     <Layout pathname={path}>
-        <Img
-            fluid={cover.childImageSharp.fluid}
-            css={css`
-                width: calc(100% - 8px);
-                height: calc(100% - 8px);
-                border: 1px solid black;
-                border-radius: 4px;
-                margin-bottom: 2rem;
+        {cover && cover.childImageSharp && cover.childImageSharp.fluid && (
+            <Img
+                fluid={cover.childImageSharp.fluid}
+                css={css`
+                    width: calc(100% - 8px);
+                    height: calc(100% - 8px);
+                    border: 1px solid black;
+                    border-radius: 4px;
+                    margin-bottom: 2rem;
 
-                &::after {
-                    content: '';
-                    position: absolute;
-                    left: 6px;
-                    top: 6px;
-                    border: 1px solid ${colors.dark};
-                    border-radius: 2px;
-                    width: 100%;
-                    height: 100%;
-                    z-index: -1;
-                }
-            `}
-        />
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 6px;
+                        top: 6px;
+                        border: 1px solid ${colors.dark};
+                        border-radius: 2px;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -1;
+                    }
+                `}
+            />
+        )}
         <Title>{title}</Title>
         <p>by {author}</p>
         <Description dangerouslySetInnerHTML={{__html: html}} />
