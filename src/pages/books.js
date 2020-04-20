@@ -50,13 +50,6 @@ export const query = graphql`
                     frontmatter {
                         title
                         author
-                        cover {
-                            childImageSharp {
-                                fluid(maxWidth: 1000) {
-                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                }
-                            }
-                        }
                         date(formatString: "MMMM DD, YYYY")
                     }
                     fields {
