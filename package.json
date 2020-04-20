@@ -49,9 +49,11 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "cms": "npx netlify-cms-proxy-server"
   },
   "repository": {
     "type": "git",
