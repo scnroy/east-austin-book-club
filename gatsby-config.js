@@ -37,5 +37,17 @@ module.exports = {
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `East Austin Book Club`,
+                short_name: `EABC`,
+                start_url: `/`,
+                background_color: `#f7f0eb`,
+                theme_color: `#a2466c`,
+                display: `standalone`,
+                icon: 'src/assets/images/books.png',
+            },
+        },
     ],
 }
