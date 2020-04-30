@@ -37,7 +37,7 @@
     "react-modal": "3.11.2",
     "react-typography": "0.16.19",
     "typography": "0.16.19",
-    "yup": "0.28.4"
+    "yup": "0.28.5"
   },
   "devDependencies": {
     "prettier": "2.0.4"
