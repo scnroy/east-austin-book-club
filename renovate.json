@@ -3,10 +3,11 @@
     "config:base"
   ],
   "branchPrefix": "renovate-",
-   "packageRules": [
+  "packageRules": [
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     }
   ]
 }
