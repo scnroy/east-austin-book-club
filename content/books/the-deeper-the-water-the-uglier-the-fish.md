@@ -1,6 +1,6 @@
 ---
 date: 2020-05-18T18:22:28.830Z
-title: "The Deeper the Water the Uglier the Fish "
+title: "Digital bookclub: The Deeper the Water the Uglier the Fish "
 author: Katya Apekina
 link: https://austin.bibliocommons.com/item/show/1984234067
 cover: /assets/91FcMmK2sEL.jpg
