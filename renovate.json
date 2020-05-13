@@ -2,10 +2,12 @@
   "extends": [
     "config:base"
   ],
-   "packageRules": [
+  "branchPrefix": "renovate-",
+  "packageRules": [
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     }
   ]
 }
