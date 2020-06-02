@@ -3,6 +3,7 @@
     "config:base"
   ],
   "branchPrefix": "renovate-",
+  "schedule": "before 3am on the first day of the month",
   "packageRules": [
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
