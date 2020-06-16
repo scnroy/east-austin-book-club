@@ -1,9 +1,9 @@
 ---
-date: 2020-07-20T15:19:24.302Z
+date: 2020-07-13T15:19:24.302Z
 title: Little Eyes
 author: Samanta Schweblin
 link: https://www.penguinrandomhouse.com/books/603657/little-eyes-by-samanta-schweblin/
-cover: "/assets/little-eyes.jpg"
+cover: /assets/little-eyes.jpg
 questions: ""
 ---
 A visionary novel about our interconnected present, about the collision of horror and humanity, from a master of the spine-tingling tale.
