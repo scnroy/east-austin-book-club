@@ -82,16 +82,21 @@ const Layout = ({pathname, children}) => (
                 <Link to="/">East&nbsp;Austin Book&nbsp;Club</Link>
             </h1>
             <p>
-                Discussing books together, on the third Monday of every month at{' '}
-                <a href="https://nativehostels.com/bar">Native Hostel & Bar</a>{' '}
-                7pm sharp
+                Discussing books together, on the third Monday of every month{' '}
+                <strike>
+                    at
+                    <a href="https://nativehostels.com/bar">
+                        {' '}
+                        Native Hostel & Bar
+                    </a>
+                </strike>{' '}
+                on Zoom, 7pm sharp
             </p>
         </Left>
         <Right>
             <Menu pathname={pathname} />
             {children}
         </Right>
-        {/* <Img fluid={image} /> */}
     </Fragment>
 )
 
