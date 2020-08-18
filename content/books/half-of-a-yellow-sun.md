@@ -1,5 +1,5 @@
 ---
-date: 2020-10-20T00:49:35.786Z
+date: 2020-10-19T00:49:35.786Z
 title: "Half of a Yellow Sun "
 author: Chimamanda Ngozi Adichie
 cover: assets/halfofayellow.jpg
