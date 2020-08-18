@@ -1,5 +1,5 @@
 ---
-date: 2020-09-22T00:46:30.500Z
+date: 2020-09-21T00:46:30.500Z
 title: "Wayward Lives, Beautiful Experiments "
 author: "Saidiya Hartman "
 cover: assets/page_1.jpg
