@@ -2,7 +2,7 @@
 date: 2020-08-17T18:40:48.297+00:00
 title: All About Love & The Trouble with Hating You
 author: 'Bell Hooks & Sajni Patel '
-cover: assets/image.jpg
+cover: /assets/image.jpg
 discussion_questions: |-
   * What connections did you make between the books?
   * What connections did you make between the books?
