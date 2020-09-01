@@ -6,6 +6,8 @@
 
 const {createFilePath} = require('gatsby-source-filesystem')
 const {fmImagesToRelative} = require('gatsby-remark-relative-images')
+const remark = require('remark')
+const remarkHTML = require('remark-html')
 const moment = require('moment')
 const path = require('path')
 
@@ -43,6 +45,19 @@ exports.onCreateNode = ({node, getNode, actions}) => {
             name: 'slug',
             value: slug,
         })
+
+        const discussionQuestions = node.frontmatter.discussion_questions
+        if (discussionQuestions) {
+            const html = remark()
+                .use(remarkHTML)
+                .processSync(discussionQuestions)
+                .toString()
+            createNodeField({
+                node,
+                name: `discussionQuestions`,
+                value: html,
+            })
+        }
     }
 }
 

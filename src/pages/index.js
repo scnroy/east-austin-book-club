@@ -33,15 +33,17 @@ const Book = ({slug, title, author, date, html, link}) => (
             `}
             dangerouslySetInnerHTML={{__html: html}}
         />
-        <a
-            href={link}
-            css={css`
-                margin-top: 1rem;
-                ${btn}
-            `}
-        >
-            Check out ⇾
-        </a>
+        {link && (
+            <a
+                href={link}
+                css={css`
+                    margin-top: 1rem;
+                    ${btn}
+                `}
+            >
+                Check out ⇾
+            </a>
+        )}
     </li>
 )
 

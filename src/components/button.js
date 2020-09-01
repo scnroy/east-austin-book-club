@@ -17,6 +17,7 @@ const btn = css`
     ${montserrat};
     position: relative;
     transform: background-color 0.5s ease-in-out;
+    cursor: pointer;
 
     &.active {
         background-color: white;

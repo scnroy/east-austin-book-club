@@ -2,9 +2,9 @@
 import {jsx, css} from '@emotion/core'
 import styled from '@emotion/styled'
 import Layout from './layout'
+import {btn} from './button'
 import {graphql} from 'gatsby'
 import Img from 'gatsby-image'
-import {colors} from '../styles/vars'
 import SEO from './seo'
 
 const Title = styled.h2`
@@ -14,46 +14,57 @@ const Title = styled.h2`
 const Description = styled.div`
     padding-left: 1rem;
     border-left: 2px solid black;
+    text-align: justify;
 `
+
+const Questions = ({body}) => [
+    <h3 key="q-heading">Discussion questions</h3>,
+    <div key="q-body" dangerouslySetInnerHTML={{__html: body}} />,
+]
 
 export default ({
     path,
     data: {
         markdownRemark: {
-            frontmatter: {title, author, cover},
+            frontmatter: {title, author, cover, link},
+            fields: {discussionQuestions},
             html,
         },
     },
 }) => (
     <Layout pathname={path}>
         <SEO title={title} />
+
+        <Title>{title}</Title>
+        <p>by {author}</p>
         {cover && cover.childImageSharp && cover.childImageSharp.fluid && (
             <Img
                 fluid={cover.childImageSharp.fluid}
                 css={css`
-                    width: calc(100% - 8px);
-                    height: calc(100% - 8px);
+                    width: calc(100% - 12px);
+                    height: calc(100% - 12px);
                     border: 1px solid black;
                     border-radius: 4px;
-                    margin-bottom: 2rem;
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        left: 6px;
-                        top: 6px;
-                        border: 1px solid ${colors.dark};
-                        border-radius: 2px;
-                        width: 100%;
-                        height: 100%;
-                        z-index: -1;
-                    }
+                    max-width: 50%;
+                    float: right;
+                    margin-left: 1rem;
+                    margin-bottom: 0.5rem;
                 `}
             />
         )}
-        <Title>{title}</Title>
-        <p>by {author}</p>
         <Description dangerouslySetInnerHTML={{__html: html}} />
+        {link && (
+            <a
+                href={link}
+                css={css`
+                    margin: 1rem 0 3rem;
+                    ${btn}
+                `}
+            >
+                Check out ⇾
+            </a>
+        )}
+        {discussionQuestions && <Questions body={discussionQuestions} />}
     </Layout>
 )
 
@@ -63,6 +74,7 @@ export const query = graphql`
             frontmatter {
                 title
                 author
+                link
                 cover {
                     childImageSharp {
                         fluid(maxWidth: 1000) {
@@ -70,6 +82,9 @@ export const query = graphql`
                         }
                     }
                 }
+            }
+            fields {
+                discussionQuestions
             }
             html
         }
