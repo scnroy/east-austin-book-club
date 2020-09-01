@@ -3,7 +3,6 @@ module.exports = {
         title: `East Austin Book Club`,
     },
     plugins: [
-        `gatsby-plugin-netlify-cms`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-catch-links`,
         {
