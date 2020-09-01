@@ -4,13 +4,24 @@ hide_body: false
 fields:
 - type: datetime
   name: date
-  label: date
+  label: Date
+  config:
+    required: true
 - type: text
   name: title
-  label: title
+  label: Title
 - type: text
   name: author
-  label: author
+  label: Author
 - type: file
   name: cover
-  label: cover
+  label: Cover
+- name: discussion_questions
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Discussion questions
