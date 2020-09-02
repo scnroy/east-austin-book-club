@@ -15,6 +15,7 @@ const Description = styled.div`
     padding-left: 1rem;
     border-left: 2px solid black;
     text-align: justify;
+    hyphens: auto;
 `
 
 const Questions = ({body}) => [
