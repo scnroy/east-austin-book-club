@@ -22,7 +22,7 @@
     "gatsby-plugin-sharp": "2.6.9",
     "gatsby-plugin-typography": "2.5.2",
     "gatsby-remark-images": "3.3.8",
-    "gatsby-remark-relative-images": "0.3.0",
+    "gatsby-remark-relative-images": "2.0.2",
     "gatsby-source-filesystem": "2.3.8",
     "gatsby-transformer-remark": "2.8.13",
     "gatsby-transformer-sharp": "2.5.3",
@@ -46,7 +46,7 @@
   "license": "MIT",
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_HOT_LOADER=fast-refresh gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn develop",
