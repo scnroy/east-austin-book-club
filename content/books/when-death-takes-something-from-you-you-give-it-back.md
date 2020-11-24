@@ -1,5 +1,5 @@
 ---
-date: 2021-01-19T01:00:00Z
+date: 2021-01-18T01:00:00Z
 title: 'When Death Takes Something From You, You Give it Back '
 author: Naja Marie Aidt
 cover: "/assets/9781566895934_fc_1024x1024.jpg"
