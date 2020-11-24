@@ -26,5 +26,6 @@ fields:
       format: markdown
   label: Discussion questions
 pages:
+- content/books/hurricane-season.md
 - content/books/sisters.md
 - content/books/when-death-takes-something-from-you-you-give-it-back.md
