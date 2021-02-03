@@ -1,5 +1,5 @@
 ---
-date: 2021-03-16T00:00:00Z
+date: 2021-03-15T00:00:00Z
 title: Song of Solomon
 author: 'Toni Morrison '
 cover: "/assets/songofsolomon.jpg"
