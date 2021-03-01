@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "author": "Sean Conroy <s.cnroy@gmail.com>",
   "dependencies": {
-    "@emotion/core": "10.0.28",
+    "@emotion/core": "10.1.1",
     "@emotion/styled": "10.0.27",
     "axios": "0.21.1",
     "eslint-config-prettier": "7.2.0",
