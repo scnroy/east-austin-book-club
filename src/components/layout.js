@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import {Fragment} from 'react'
-import {Global, css, jsx} from '@emotion/core'
+import {Global, css} from '@emotion/react'
 import styled from '@emotion/styled'
 import {Link} from 'gatsby'
 

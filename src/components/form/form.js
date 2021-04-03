@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import {jsx, css} from '@emotion/core'
+import {css} from '@emotion/react'
 import styled from '@emotion/styled'
 import {Form, Field} from 'formik'
 import {btn} from '../button'
