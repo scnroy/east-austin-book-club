@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import {jsx, css} from '@emotion/core'
+import React from 'react'
+import {css} from '@emotion/react'
 import {graphql, Link} from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -88,9 +88,10 @@ export const query = graphql`
                         author
                         cover {
                             childImageSharp {
-                                fluid(maxWidth: 1000) {
-                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                                }
+                                gatsbyImageData(
+                                    placeholder: TRACED_SVG
+                                    layout: FULL_WIDTH
+                                )
                             }
                         }
                         date(formatString: "MMMM DD, YYYY")

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import {jsx, css} from '@emotion/core'
+import {css} from '@emotion/react'
 import {Link} from 'gatsby'
 import {montserrat, colors} from '../styles/vars'
 

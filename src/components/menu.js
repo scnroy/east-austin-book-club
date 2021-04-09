@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import {jsx, css} from '@emotion/core'
+import {css} from '@emotion/react'
 import {useState, useEffect} from 'react'
 import {btn} from './button'
 import {Link} from 'gatsby'

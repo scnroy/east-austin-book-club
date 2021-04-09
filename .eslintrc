@@ -1,0 +1,13 @@
+{
+    "extends": [
+        "react-app",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": [
+        "@emotion"
+    ],
+    "rules": {
+        "@emotion/pkg-renaming": "error",
+        "prettier/prettier": 2
+    }
+}
