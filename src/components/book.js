@@ -1,3 +1,4 @@
+import React from 'react'
 import {css} from '@emotion/react'
 import styled from '@emotion/styled'
 import Layout from './layout'
@@ -17,10 +18,22 @@ const Description = styled.div`
     hyphens: auto;
 `
 
-const Questions = ({body}) => [
-    <h3 key="q-heading">Discussion questions</h3>,
-    <div key="q-body" dangerouslySetInnerHTML={{__html: body}} />,
-]
+const QuestionsBody = styled.div`
+    font-size: 0.8rem;
+    padding-left: 1rem;
+    border-left: 2px solid black;
+
+    hr {
+        width: 6rem;
+    }
+`
+
+const Questions = ({body}) => (
+    <>
+        <h3>Discussion questions</h3>
+        <QuestionsBody dangerouslySetInnerHTML={{__html: body}} />
+    </>
+)
 
 export default function Book({
     path,
@@ -41,6 +54,7 @@ export default function Book({
             {cover?.childImageSharp?.gatsbyImageData && (
                 <GatsbyImage
                     image={cover.childImageSharp.gatsbyImageData}
+                    alt={`Cover artwork for ${title}`}
                     css={css`
                         width: calc(100% - 12px);
                         height: calc(100% - 12px);
