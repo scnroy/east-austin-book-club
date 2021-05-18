@@ -12,7 +12,7 @@ discussion_questions: "Jordan collected fish. What do you collect? Why?\n\n***\n
   nothing to do with optimism—instead, it’s something far deeper and far less self-conscious
   than optimism—the Indestructible is the thing we mask with all sorts of other symbols,
   hopes, and ambitions—that don’t force you to acknowledge what is underneath.\n\nIn
-  which ways did Kafka's _Indestructable_ manifest in Jordan and Miller's lives? Did
+  which ways did Kafka's _Indestructible_ manifest in Jordan and Miller's lives? Did
   this concept resonate with you?\n\n***\n\nIf you are willing, please share a time
   that you faced chaos/tragedy/loss and how it impacted you. Do you identify more
   with Jordan's impulse to immediately get to work or with Miller's experience of
