@@ -7,7 +7,7 @@
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.1.5",
     "axios": "0.21.1",
-    "formik": "2.2.6",
+    "formik": "2.2.9",
     "gatsby": "3.2.1",
     "gatsby-plugin-catch-links": "3.2.0",
     "gatsby-plugin-emotion": "6.2.0",
