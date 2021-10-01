@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "author": "Sean Conroy <s.cnroy@gmail.com>",
   "dependencies": {
-    "@emotion/react": "11.1.5",
-    "@emotion/styled": "11.1.5",
+    "@emotion/react": "11.4.1",
+    "@emotion/styled": "11.3.0",
     "axios": "0.21.2",
     "formik": "2.2.9",
     "gatsby": "3.2.1",
